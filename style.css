@@ -1,128 +1,116 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    padding: 1.5rem;
+body {
+  padding: 1.5rem;
 }
-header{
-    width: 100%;
-    height: 20%;
-   /*  border: 2px solid red; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10rem;
+header {
+  width: 100%;
+  height: 20%;
+  /*  border: 2px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rem;
 }
-.logo{
-    /* border: 2px solid green; */
-    width: 5%;
-    height: 70%;
-    margin-left: 30px;
+.logo {
+  /* border: 2px solid green; */
+  width: 5%;
+  height: 70%;
+  margin-left: 30px;
 }
-.logo img{
-    width: 100%;
-    
-
+.logo img {
+  width: 100%;
 }
-.logo img:hover{
-   
-    animation: logo 2s linear 2 alternate both ;
-
+.logo img:hover {
+  animation: logo 2s linear 2 alternate both;
 }
 @keyframes logo {
-    100%{
-        transform: rotate(360deg) scale(2);
-       
-
-    }
-    
+  100% {
+    transform: rotate(360deg) scale(2);
+  }
 }
-.session{
-    /* border: 2px solid blue; */
-    display: flex;
-    gap: 4rem;
-    margin-right: 30px;
+.session {
+  /* border: 2px solid blue; */
+  display: flex;
+  gap: 4rem;
+  margin-right: 30px;
 }
 .session a {
-    text-decoration: none;
-    color: black;
-    font-size: large;
+  text-decoration: none;
+  color: black;
+  font-size: large;
+  position: relative;
 }
-main{
-   /*  border: 2px solid yellow; */
-    height: 70%;
-
+.session a::after {
+  content: ""; /* Görünür bir içerik ekleyelim */
+  position: absolute; /* Mutlak konumlandıralım */
+  left: 0; /* Sol kenardan başlayalım */
+  bottom: -2px; /* Alt kenardan 2 piksel yukarıda başlamasını sağlayalım */
+  width: 0; /* Başlangıçta genişlik sıfır olsun */
+  height: 2px; /* Kalınlığını belirleyelim */
+  background-color: #e51a59; /* Border rengi */
+  transition: width  1s ease; /* Geçiş efektini tanımlayalım */
 }
-main h1{
-    /* border: 2px solid purple; */
-    text-align: center;
-    color: #E51A59;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-    font-size: 6rem;
-    height: 30%;
-    margin-bottom: 3rem;
+.session a:hover::after {
+  width: 100%;
+  
 }
-main .img{
-    /* border: 2px solid fuchsia; */
-    height: 60%;
-    display: flex;
-    padding: 1rem;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 6rem;
-    flex-wrap: wrap;
-
-
+.session a:hover{
+    color: #e51a59;
 }
-/* main .img img:has(main .img img:hover){
-    animation: none;
-} */
-main .img img{
-    width: 20vw;
-    box-shadow: 3px 3px 5px gray;
-    border-radius: 5px;
-    animation: image2 3s linear infinite  alternate  ;
-    
+
+main {
+  /*  border: 2px solid yellow; */
+  height: 70%;
 }
-main .img img:hover{
-   
-    animation: image 2s  linear  alternate infinite both;
- }
+main h1 {
+  /* border: 2px solid purple; */
+  text-align: center;
+  color: #e51a59;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 6rem;
+  height: 30%;
+  margin-bottom: 3rem;
+}
+main .img {
+  /* border: 2px solid fuchsia; */
+  height: 60%;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 6rem;
+  flex-wrap: wrap;
+}
+main:has(.img1:hover) .img1 img {
+  animation: none;
+  transition: all 2s ease-in-out;
+}
 
-
-main .img img:hover {
-    animation: none;
+main .img img {
+  width: 20vw;
+  box-shadow: 3px 3px 5px gray;
+  border-radius: 5px;
+  animation: image2 3s linear infinite alternate;
+}
+main img:hover {
+  transform: scale(2);
+}
+main .img {
+  animation: image 2s linear alternate infinite both;
 }
 
 @keyframes image2 {
-    0%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(1.3);
-    }
-    100%{
-        transform: scale(1);
-    }
-    
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-@keyframes image {
-   
-    100%{
-        transform: scale(2);
-    }
-}
-/* animation: name duration timing-function delay iteration-count direction fill-mode; 
- animation-name: travel;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 4s;
-  animation-iteration-count: 3;
-  animation-direction: alternate;
-  animation-fill-mode: both;  */
- /*  .box3:has(.img:hover) .img img {
-    animation: none;
-    transition: all 2s ease-in-out;
-  } */
